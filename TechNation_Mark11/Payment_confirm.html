@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment confirmation Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      background: url('https://r4.wallpaperflare.com/wallpaper/694/564/994/gigabyte-aorus-logo-pc-gaming-hd-wallpaper-28e60d7840509cb8805cc19eb832b4ba.jpg') center/cover no-repeat; /* Set your background image */
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      color: pink;
+      font-style: italic;
+      width: 100%;
+    }
+
+    #logo {
+      width: 50px; /* Set the width of your logo */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    #companyName {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #content {
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better readability */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #description {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    #link {
+      text-decoration: none;
+      color: purple;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: normal;
+      transition: color 0.1s ease-in-out;
+    }
+
+    #link:hover {
+      color: #8a2be2;
+    }
+
+    #timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #timer {
+      margin-top: 10px;
+      font-size: 16px;
+      color: black;
+    }
+
+    #dummyBtn,
+    #submitBtn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    }
+
+    #dummyBtn {
+      background-color: #ccc;
+      color: #fff;
+    }
+
+    #submitBtn {
+      background-color: #3498db;
+      color: #fff;
+      display: none;
+    }
+
+    #submitBtn:hover {
+      background-color: #297fb8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PAYMENT CONFIRMATION</h1>
+</header>
+
+<div id="content">
+  <p id="description">Your are in the Final stage of Placing Order.
+    Please! Upload the screenshot of your Payment in google form given below, so that we can confirm your Payment. </p>
+    <a id="link" href="https://forms.gle/hotaZ9DDSjWA6Qkv9">LINK : https://forms.gle/hotaZ9DDSjWA6Qkv9</a>
+  <div id="timer-container">
+    <div id="timer">Timer: <span id="countdown">3</span> seconds</div>
+    <button id="dummyBtn">Submit</button>
+    <a href="orderPlaced.html"><button id="submitBtn"">Submit</button></a>
+  </div>
+</div>
+
+<script>
+  var countdown = 3;
+
+  function updateTimer() {
+    document.getElementById('countdown').textContent = countdown;
+  }
+
+  function startTimer() {
+    var timerInterval = setInterval(function() {
+      updateTimer();
+      if (countdown <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById('dummyBtn').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+      } else {
+        countdown--;
+      }
+    }, 1000);
+  }
+
+  // Start the timer
+  startTimer();
+
+  // Function to be called when the submit button is clicked
+  function submitForm() {
+    alert('Form submitted!');
+    // You can add more logic here for form submission or redirecting.
+  }
+</script>
+
+</body>
+</html>
