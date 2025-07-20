@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDRESS AND DETAILS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      width: 100%;
+      background: url('/img/MAP1.jpg') center/cover no-repeat; /* Set your background image */
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      color: white;
+      -webkit-text-stroke: 1.5px black;
+      text-stroke: 1px black;
+      font-style: italic;
+      margin-top: -20px;
+    }
+
+    header:active:after{
+      text-decoration: underline ;
+      color: rgb(42, 171, 42);
+    }
+
+    #logo {
+      width: 50px; /* Set the width of your logo */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    #companyName {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #content {
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background for better readability */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #description {
+      font-size: 16px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    #link {
+      text-decoration: none;
+      color: purple;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: normal;
+      transition: color 0.1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    #link:hover {
+      color: #8a2be2;
+    }
+
+    #timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #timer {
+      margin-top: 10px;
+      font-size: 16px;
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    #dummyBtn,
+    #submitBtn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    }
+
+    #dummyBtn {
+      background-color: #ccc;
+      color: #fff;
+    }
+
+    #submitBtn {
+      background-color: #3498db;
+      color: #fff;
+      display: none;
+    }
+
+    #submitBtn:hover {
+      background-color: #297fb8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ADDRESS AND DETAILS</h1>
+</header>
+
+<div id="content">
+  <p id="description">Please enter "Your Details" and "Your Address Details" in the given below Google Form.
+    So that we can Deliver your Product safely to your address only.</p>
+  <a id="link" href="https://forms.gle/AoNCjwa9naBzhifW9">Link : https://forms.gle/AoNCjwa9naBzhifW9</a>
+  <div id="timer-container">
+    <div id="timer">Timer: <span id="countdown">5</span> seconds</div>
+    <button id="dummyBtn">Submit</button>
+    <a href="checkout.html"><button id="submitBtn"">Submit</button></a>
+  </div>
+</div>
+
+<script>
+  var countdown = 5;
+
+  function updateTimer() {
+    document.getElementById('countdown').textContent = countdown;
+  }
+
+  function startTimer() {
+    var timerInterval = setInterval(function() {
+      updateTimer();
+      if (countdown <= 0) {
+        clearInterval(timerInterval);
+        document.getElementById('dummyBtn').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+      } else {
+        countdown--;
+      }
+    }, 1000);
+  }
+
+  // Start the timer
+  startTimer();
+
+  // Function to be called when the submit button is clicked
+  function submitForm() {
+    alert('Form submitted!');
+    // You can add more logic here for form submission or redirecting.
+  }
+</script>
+
+</body>
+</html>
