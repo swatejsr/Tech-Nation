@@ -1,0 +1,120 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    background: #e6effb;
+    color: #222831;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    color: #1a73e8;
+}
+#containerClothing, #containerAccessories {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 70px 20px;
+    padding-bottom: 40px;
+}
+#box {
+    background: #ffffff;
+    width: 100%;
+    border-radius: 10px;
+    align-content: center;
+    box-shadow: 0 2px 12px 0 #e3e7ed;
+    border: 1px solid #e3e7ed;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+#box:hover {
+    box-shadow: 0 6px 18px 0 #b3c6e0;
+    border: 1.5px solid #1a73e8;
+}
+#containerClothing img,
+#containerAccessories img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #f0f4f8;
+}
+#details {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-transform: capitalize;
+    color: #393e46;
+}
+#box a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+#box a:hover {
+    color: #ff6f00;
+}
+h3 {
+    font-size: 16px;
+}
+h4 {
+    font-weight: 100;
+    color: #757575;
+}
+h2 {
+    color: #ff6f00;
+}
+
+/* ----------------------------- MEDIA QUERY --------------------------- */
+
+@media (max-width: 1070px) {
+    h1 {
+        font-size: 25px;
+    }
+    #containerClothing, #containerAccessories {
+        width: 95%;
+        gap: 10px;
+    }
+}
+@media (max-width: 850px) {
+    h1 {
+        width: 80%;
+    }
+    #containerClothing, #containerAccessories {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 70px 20px;
+    }
+}
+@media (max-width: 650px) {
+    h1 {
+        font-size: 20px;
+        width: 90%;
+    }
+    #containerClothing, #containerAccessories {
+        width: 90%;
+    }
+}
+@media (max-width: 600px) {
+    h1 {
+        width: 70%;
+    }
+    #containerClothing, #containerAccessories {
+        width: 70%;
+    }
+}
+@media (max-width: 505px) {
+    h1 {
+        width: 80%;
+    }
+    #containerClothing, #containerAccessories {
+        width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
